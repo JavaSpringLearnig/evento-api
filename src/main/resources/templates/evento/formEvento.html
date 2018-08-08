@@ -16,6 +16,9 @@
 		<h1>Cadastro de Evento</h1>
 		<h3><a href="/eventos" class="waves-effect waves-light btn-large"><i class="material-icons left">add_circle</i>
 		Cadastrar Evento</a></h3>
+		
+		<th:block th:include="mensagemValidacao"></th:block>
+		
 		<form class="container" method="post">
 			Nome: <input type="text" value="" name="nome" />
 			<div class="row">
