@@ -10,13 +10,25 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+       <link rel="stylesheet" href="css/style.css"/>
 	</head>
 	
 	<body>
-		<h1>Lista de Eventos</h1>
-		<h3><a href="/cadastrarEvento" class="waves-effect waves-light btn-large"><i class="material-icons left">add_circle</i>
-		Cadastrar Evento</a></h3>
+		<header>
+			<nav>
+				<div class="nav-wrapper nav">
+					<a href="#" class="brand-logo">Lista de Eventos</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="/cadastrarEvento" class="waves-effect waves-light btn-large btn-todos">Cadastrar Evento</a></li>
+						
+					</ul>
+				</div>
+			</nav>
+	</header>
+	
 		
+		<div class="container tabelaIndex">
 		<table class="container">
 			<thead>
 				<tr>
@@ -24,6 +36,7 @@
 					<th>Local</th>
 					<th>Data</th>
 					<th>Horario</th>
+					<th>Deletar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,10 +46,11 @@
 					<td><span th:text="${evento.local}"></span></td>
 					<td><span th:text="${evento.data}"></span></td>
 					<td><span th:text="${evento.horario}"></span></td>
+					<td><a  class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons">delete_sweep</i></a></td>
 				</tr>
 			</tbody>
 		</table>
-		
+		</div>
 		<!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	</body>

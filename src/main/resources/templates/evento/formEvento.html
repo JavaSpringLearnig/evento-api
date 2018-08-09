@@ -10,15 +10,27 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+       <link rel="stylesheet" href="css/style.css"/>
 	</head>
 	
 	<body>
-		<h1>Cadastro de Evento</h1>
-		<h3><a href="/eventos" class="waves-effect waves-light btn-large"><i class="material-icons left">add_circle</i>
-		Cadastrar Evento</a></h3>
+			<header>
+			<nav>
+				<div class="nav-wrapper nav">
+					<a href="#" class="brand-logo">Cadastro de Evento</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="/eventos" class="waves-effect waves-light btn-large btn-todos"><i class="Tiny material-icons left">clear_all</i>Lista de evento</a></li>
+						
+					</ul>
+				</div>
+			</nav>
+	</header>
 		
+		
+		
+		<div class="container formEvento">
 		<th:block th:include="mensagemValidacao"></th:block>
-		
 		<form class="container" method="post">
 			Nome: <input type="text" value="" name="nome" />
 			<div class="row">
@@ -29,11 +41,12 @@
 			Data: <input type="date" value="" name="data" />
 				</div>
 				<div class="input-field col s3">
-			Horario: <input type="text" value="" name="horario" />
+			Horario: <input type="time" value="" name="horario" />
 				</div>
 			</div>
 			<button class="waves-effect waves-light btn-large" type="submit">Salvar</button>
 		</form>
+		</div>
 		
 		<!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
